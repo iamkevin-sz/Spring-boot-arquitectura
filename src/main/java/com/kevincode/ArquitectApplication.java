@@ -7,6 +7,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ArquitectApplication {
 
 	public static void main(String[] args) {
+		System.out.println("===================================================================================");
+		System.out.println("===================================================================================");
+		System.out.println("===================================================================================");
+		System.out.println("===================================================================================");
+
+		System.out.println("Valor de SPRING_DATASOURCE_URL: " + System.getenv("SPRING_DATASOURCE_URL"));
 		SpringApplication.run(ArquitectApplication.class, args);
 	}
 

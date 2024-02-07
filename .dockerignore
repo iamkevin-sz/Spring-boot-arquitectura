@@ -1,0 +1,6 @@
+target/test/clasess/
+target/maven-status/
+target/maven-archiver
+target/generated-test-sources
+target/generated-sources
+target/classes

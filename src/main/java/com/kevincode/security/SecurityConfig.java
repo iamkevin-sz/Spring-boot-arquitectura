@@ -29,10 +29,10 @@ public class SecurityConfig {
     JwtUtils jwtUtils;
 
     @Autowired
-    UserDetailsMRepositoryImp userDetailsService;
+    UserDetailsMRepositoryImp userDetailsMRepositoryImp;
 
     @Autowired
-    JwtAuthorizationFilter JwtAuthenticationFilter;
+    JwtAuthorizationFilter jwtAuthenticationFilter;
 
     // Configurar cadena de filtros con este metodo
     @Bean
@@ -77,7 +77,7 @@ public class SecurityConfig {
     AuthenticationManager authenticationManager(HttpSecurity httpSecurity, PasswordEncoder passwordEncoder)
             throws Exception {
         return httpSecurity.getSharedObject(AuthenticationManagerBuilder.class)
-                .userDetailsService(userDetailsService)
+                .userDetailsService(userDetailsMRepositoryImp)
                 .passwordEncoder(passwordEncoder)
                 .and().build();
     }

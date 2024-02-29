@@ -32,7 +32,7 @@ public class SecurityConfig {
     UserDetailsMRepositoryImp userDetailsMRepositoryImp;
 
     @Autowired
-    JwtAuthorizationFilter jwtAuthenticationFilter;
+    JwtAuthorizationFilter jwtAuthorizationFilter;
 
     // Configurar cadena de filtros con este metodo
     @Bean
@@ -52,7 +52,7 @@ public class SecurityConfig {
                     session.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
                 })
                 .addFilter(jwtAuthenticationFilter)
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 
